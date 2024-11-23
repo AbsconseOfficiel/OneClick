@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_card_sections",
+  "info": {
+    "displayName": "Card Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "cards": {
+      "displayName": "cards",
+      "type": "component",
+      "repeatable": true,
+      "component": "card.cards"
+    }
+  }
+}

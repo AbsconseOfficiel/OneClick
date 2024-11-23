@@ -1,0 +1,12 @@
+<section class="statistics">
+  <div class="container">
+    <div class="stat-list">
+      {% for stat in section.stats %}
+        <div class="stat">
+          <h3>{{ stat.value }}<span>{{ stat.suffix }}</span></h3>
+          <p>{{ stat.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

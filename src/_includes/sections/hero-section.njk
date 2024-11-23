@@ -1,0 +1,13 @@
+<section class="hero">
+  <div class="container">
+    <h1>{{ section.title }}</h1>
+    <p>{{ section.subtitle }}</p>
+    {% if section.backgroundImage %}
+      <img src="{{ section.backgroundImage.url }}" alt="{{ section.backgroundImage.alternativeText }}">
+    {% endif %}
+    {% if section.button %}
+      <a href="{{ section.button.link }}" class="button">{{ section.button.title }}</a>
+    {% endif %}
+    <h1>Test</h1>
+  </div>
+</section>

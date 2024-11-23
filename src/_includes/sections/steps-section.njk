@@ -1,0 +1,16 @@
+<section class="steps">
+  <div class="container">
+    <h2>{{ section.title }}</h2>
+    {% if section.subtitle %}
+      <p>{{ section.subtitle }}</p>
+    {% endif %}
+    <div class="step-list">
+      {% for step in section.steps %}
+        <div class="step">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

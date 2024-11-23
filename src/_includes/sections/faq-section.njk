@@ -1,0 +1,13 @@
+<section class="faq">
+  <div class="container">
+    <h2>{{ section.title }}</h2>
+    <div class="faq-list">
+      {% for question in section.questions %}
+        <div class="faq-item">
+          <h3>{{ question.question }}</h3>
+          <p>{{ question.reply }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_statistics_sections",
+  "info": {
+    "displayName": "Statistics Section",
+    "icon": "chartCircle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "stats": {
+      "displayName": "stats",
+      "type": "component",
+      "repeatable": true,
+      "component": "stat.stats"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personnalisation du mode sombre */
+body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+a.cta-button {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded;
+}
+
+.card-container {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.card {
+  @apply bg-gray-800 p-4 rounded shadow-lg hover:bg-gray-700 transition;
+}
+
+.steps-list {
+  @apply list-decimal pl-5 space-y-4;
+}
+
+.stats-container {
+  @apply flex flex-wrap gap-6 justify-center;
+}
+
+.stat {
+  @apply bg-gray-800 text-center p-4 rounded shadow-lg w-40 h-40 flex flex-col items-center justify-center;
+}
+
+.faq-list {
+  @apply border-t border-gray-700 divide-y divide-gray-700 mt-4;
+}
+
+.faq-list dt {
+  @apply font-bold py-2 cursor-pointer hover:text-blue-400;
+}
+
+.faq-list dd {
+  @apply text-sm py-2;
+}
+
+h1, h2, h3 {
+  @apply font-bold mb-4;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
