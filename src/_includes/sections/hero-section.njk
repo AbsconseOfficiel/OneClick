@@ -1,13 +1,22 @@
-<section class="hero">
-  <div class="container">
-    <h1>{{ section.title }}</h1>
-    <p>{{ section.subtitle }}</p>
-    {% if section.backgroundImage %}
-      <img src="{{ section.backgroundImage.url }}" alt="{{ section.backgroundImage.alternativeText }}">
-    {% endif %}
+<div 
+  class="relative h-[85vh] flex items-center justify-center bg-cover bg-center rounded-b-3xl	
+         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
+         after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color" 
+  style="background-image: url('http://localhost:1337/uploads/background_c76d3e5a60.webp');"
+>
+  <div class="relative z-10 p-10 text-center max-w-3xl">
+    <h1 class="font-display text-5xl md:text-6xl tracking-wide">
+      {{ section.title }}
+    </h1>
+    <p class="text-gray-100 mt-4">
+      {{ section.subtitle }}
+    </p>
+    
     {% if section.button %}
-      <a href="{{ section.button.link }}" class="button">{{ section.button.title }}</a>
+      <a href="{{ section.button.link or '#' }}" 
+         class="inline-block rounded-lg mt-8 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
+        {{ section.button.title }}
+      </a>
     {% endif %}
-    <h1>Test</h1>
   </div>
-</section>
+</div>

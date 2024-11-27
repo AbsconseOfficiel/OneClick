@@ -1,0 +1,70 @@
+<div class="container mx-auto">
+    <h2 class="font-display text-4xl max-w-[35rem] mb-14">
+        {{ section.title }}
+    </h2>
+
+<!-- Cartes -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+  {% for card in section.priceCards %}
+  <div 
+    class="p-9 rounded-2xl
+    {% if card.isHighlighted %}bg-custom-blue text-white{% else %}bg-white text-black{% endif %}">
+    
+    <!-- Titre -->
+    <h3 class="font-display text-2xl text-center mb-4">
+      {{ card.title }}
+    </h3>
+    
+    <!-- Prix principal -->
+    <p class="text-4xl font-extrabold text-center mb-6">
+      {{ card.price }} M €
+    </p>
+
+    <p class="text-sm">{{ section.description }} <span class="brut-value">{{ card.price * 1_000_000 }}<span></p>
+
+    <!-- Barre de contrôle -->
+    <div class="flex items-center gap-4 my-4">
+    <input 
+        type="range" 
+        min="400000" 
+        max="10000000" 
+        step="100000" 
+        value="5000000" 
+        class="slider-sync w-64 appearance-none h-2 bg-gray-700 rounded-lg outline-none w-full"
+    />
+    </div>
+
+          <a href="{{ section.button.link or '#' }}" 
+         class="inline-block w-full text-center rounded-lg my-4 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
+        Réserver une démo
+      </a>
+
+      <hr>
+
+    <!-- Détails -->
+<div class="space-y-4 text-sm mt-6">
+  <div class="flex justify-between items-center">
+    <span>Frais de mise en place</span>
+    <span class="font-semibold setup-cost" data-value="{{ card.setupCost }}">
+      {{ card.setupCost }} K €
+    </span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span>Frais de performance</span>
+    <span class="font-semibold performance-rate" data-value="{{ card.performanceFees }}">
+      {{ card.performanceFees }}% ({{ (card.performanceFees * card.price * 1000 / 100) }} K €)
+    </span>
+  </div>
+  <div class="flex justify-between items-center">
+    <span>Maintenance</span>
+    <span class="font-semibold maintenance-rate" data-value="{{ card.maintenance }}">
+      {{ card.maintenance }}% ({{ (card.maintenance * card.price * 1000 / 100) }} K €)
+    </span>
+  </div>
+</div>
+
+  </div>
+  {% endfor %}
+</div>
+
+</div>

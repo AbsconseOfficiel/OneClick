@@ -8,11 +8,7 @@ module.exports = async function() {
     // Attendre 5 secondes avant de faire la requête
     await delay(10000);
 
-    const response = await axios.get('http://localhost:1337/api/pages', {
-      params: {
-        'populate[sections][populate]': '*'
-      }
-    });
+    const response = await axios.get('http://localhost:1337/api/pages?populate[0]=sections.steps.steps&populate[1]=sections.cards.button&populate[2]=sections.questions.questions&populate[3]=sections.stats.stats&populate[4]=sections.backgroundImage&populate[5]=sections.button&populate[6]=sections.steps.icon&populate[7]=sections.cards.image&populate[8]=sections.priceCards');
 
     if (!response.data || !response.data.data || response.data.data.length === 0) {
       console.error("Aucune page trouvée.");

@@ -9,10 +9,10 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
-    "dev:11ty": "concurrently \"npm run 11ty\" \"npm run watch:css\"",
+    "dev": "concurrently \"strapi develop\" \"npm run 11ty\" \"npm run watch:css\"",
     "11ty": "eleventy --serve",
-    "build:css": "postcss src/styles/tailwind.css -o public/styles.css",
-    "watch:css": "postcss src/styles/tailwind.css -o public/styles.css --watch"
+    "build:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/_includes/assets/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/_includes/assets/styles.css --watch"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
@@ -21,7 +21,6 @@
     "@strapi/strapi": "5.4.1",
     "axios": "^1.7.7",
     "better-sqlite3": "11.3.0",
-    "concurrently": "^9.1.0",
     "node-fetch": "^3.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

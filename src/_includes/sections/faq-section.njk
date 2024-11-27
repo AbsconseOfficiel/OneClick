@@ -1,13 +1,14 @@
-<section class="faq">
-  <div class="container">
-    <h2>{{ section.title }}</h2>
-    <div class="faq-list">
-      {% for question in section.questions %}
-        <div class="faq-item">
-          <h3>{{ question.question }}</h3>
-          <p>{{ question.reply }}</p>
+<div class="bg-neutral-950 rounded-2xl p-9">
+  <div class="mb-7"><span class="texte-sm text-gray-300">FAQ</span></div>
+  <h2 class="font-display text-3xl text-white mb-4 max-w-[35rem]">{{ section.title }}</h2>
+  {% if section.questions %}
+    <div class="divide-y divide-gray-700">
+      {% for q in section.questions %}
+        <div class="py-4">
+          <h3 class="text-lg font-semibold text-yellow-400 cursor-pointer">{{ q.question }}</h3>
+          <p class="text-gray-300 mt-2">{{ q.reply }}</p>
         </div>
       {% endfor %}
     </div>
-  </div>
-</section>
+  {% endif %}
+</div>

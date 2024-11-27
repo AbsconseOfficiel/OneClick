@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_price_comparators",
+  "info": {
+    "displayName": "Price Comparator",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "priceCards": {
+      "displayName": "Card Price",
+      "type": "component",
+      "repeatable": true,
+      "component": "card.card-price"
+    }
+  }
+}

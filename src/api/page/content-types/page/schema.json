@@ -25,7 +25,8 @@
         "sections.card-section",
         "sections.steps-section",
         "sections.statistics-section",
-        "sections.faq-section"
+        "sections.faq-section",
+        "sections.price-comparator"
       ]
     }
   }

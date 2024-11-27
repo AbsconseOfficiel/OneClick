@@ -1,12 +1,20 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,njk}", // Parcourir les fichiers HTML et Nunjucks
-    "./src/_includes/**/*.njk",
-    "./src/_data/**/*.js", // Inclure les fichiers de données si nécessaire
+    './src/**/*.html',
+    './src/**/*.md',
+    './src/**/*.njk',
+    './src/**/*.js',
   ],
   theme: {
-    extend: {}, // Personnalisez votre thème ici
+    extend: {
+      colors: {
+        'custom-blue': '#1710C0', // Exemple de couleur personnalisée
+      },
+      fontFamily: {
+        'display': ['Halyard Display', 'sans-serif'],
+        'text': ['Host Grotesk', 'sans-serif'],
+      },
+    }, // Personnalise encore plus ton thème ici
   },
-  plugins: [], // Ajoutez des plugins Tailwind si nécessaire
+  plugins: [],
 };

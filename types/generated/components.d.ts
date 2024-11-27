@@ -1,5 +1,22 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CardCardPrice extends Struct.ComponentSchema {
+  collectionName: 'components_card_card_prices';
+  info: {
+    description: '';
+    displayName: 'card Price';
+    icon: 'crown';
+  };
+  attributes: {
+    isHighlighted: Schema.Attribute.Boolean;
+    maintenance: Schema.Attribute.String;
+    performanceFees: Schema.Attribute.String;
+    price: Schema.Attribute.Decimal;
+    setupCost: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface CardCards extends Struct.ComponentSchema {
   collectionName: 'components_card_cards';
   info: {
@@ -44,6 +61,7 @@ export interface QuestionQuestions extends Struct.ComponentSchema {
 export interface SectionsCardSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_card_sections';
   info: {
+    description: '';
     displayName: 'Card Section';
     icon: 'apps';
   };
@@ -83,6 +101,19 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsPriceComparator extends Struct.ComponentSchema {
+  collectionName: 'components_sections_price_comparators';
+  info: {
+    displayName: 'Price Comparator';
+    icon: 'crown';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    priceCards: Schema.Attribute.Component<'card.card-price', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsStatisticsSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_statistics_sections';
   info: {
@@ -98,12 +129,13 @@ export interface SectionsStatisticsSection extends Struct.ComponentSchema {
 export interface SectionsStepsSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_steps_sections';
   info: {
+    description: '';
     displayName: 'Steps Section';
     icon: 'bulletList';
   };
   attributes: {
     steps: Schema.Attribute.Component<'step.steps', true>;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -144,12 +176,14 @@ export interface StepSteps extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'card.card-price': CardCardPrice;
       'card.cards': CardCards;
       'cta.button': CtaButton;
       'question.questions': QuestionQuestions;
       'sections.card-section': SectionsCardSection;
       'sections.faq-section': SectionsFaqSection;
       'sections.hero-section': SectionsHeroSection;
+      'sections.price-comparator': SectionsPriceComparator;
       'sections.statistics-section': SectionsStatisticsSection;
       'sections.steps-section': SectionsStepsSection;
       'stat.stats': StatStats;

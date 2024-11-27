@@ -395,6 +395,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.steps-section',
         'sections.statistics-section',
         'sections.faq-section',
+        'sections.price-comparator',
       ]
     >;
     slug: Schema.Attribute.String;

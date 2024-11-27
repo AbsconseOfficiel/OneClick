@@ -1,16 +1,26 @@
-<section class="cards">
-  <div class="container">
-    <h2>{{ section.title }}</h2>
-    {% if section.subtitle %}
-      <p>{{ section.subtitle }}</p>
-    {% endif %}
-    <div class="card-list">
+<div class="container mx-auto">
+  <h2 class="font-display text-4xl mb-14 max-w-[35rem]">
+    {{ section.title }}
+  </h2>
+  {% if section.cards %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {% for card in section.cards %}
-        <div class="card">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.description }}</p>
+        <div class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
+          <!-- Contenu en haut -->
+          <div>
+            <h3 class="font-display text-3xl mb-4">{{ card.title }}</h3>
+            <p class="text-gray-300 mb-7 text-sm">{{ card.description }}</p>
+          </div>
+          <!-- Bouton en bas -->
+          {% if card.button %}
+            <a href="{{ card.button.link }}" class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-2 px-2 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+              </svg>
+            </a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
-  </div>
-</section>
+  {% endif %}
+</div>
