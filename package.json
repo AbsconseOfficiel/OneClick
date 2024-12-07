@@ -18,7 +18,7 @@
     "@11ty/eleventy": "^3.0.0",
     "@strapi/plugin-cloud": "5.4.1",
     "@strapi/plugin-users-permissions": "5.4.1",
-    "@strapi/strapi": "5.4.1",
+    "@strapi/strapi": "5.5.0",
     "axios": "^1.7.7",
     "better-sqlite3": "11.3.0",
     "node-fetch": "^3.3.2",
