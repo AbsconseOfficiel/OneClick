@@ -1,22 +1,26 @@
 <div 
-  class="relative h-[85vh] flex items-center justify-center bg-cover bg-center rounded-b-3xl	
-         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
-         after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color" 
-  style="background-image: url('http://localhost:1337/uploads/background_c76d3e5a60.webp');"
+  class="relative h-[85vh] flex items-center justify-center bg-cover bg-center rounded-b-2xl overflow-hidden
+         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale 
+         after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color"
+  style="background-image: url('/public{{ section.backgroundImage.url }}');"
 >
+  <!-- Contenu principal -->
   <div class="relative z-10 p-10 text-center max-w-3xl">
-    <h1 class="font-display text-5xl md:text-6xl tracking-wide">
+    <h1 class="font-display text-5xl md:text-6xl tracking-wide text-white">
       {{ section.title }}
     </h1>
-    <p class="text-gray-100 mt-4">
+    <p class="text-neutral-400 mt-4">
       {{ section.subtitle }}
     </p>
     
     {% if section.button %}
       <a href="{{ section.button.link or '#' }}" 
-         class="inline-block rounded-lg mt-8 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
+         class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
         {{ section.button.title }}
-      </a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg></a>
+
     {% endif %}
   </div>
 </div>

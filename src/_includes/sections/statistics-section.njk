@@ -2,8 +2,8 @@
   {% if section.stats %}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {% for stat in section.stats %}
-        <div class="p-9 rounded-3xl	bg-white">
-          <strong class="text-4xl font-extrabold mb-7 text-custom-blue">{{ stat.value }}{{ stat.suffix }}</strong>
+        <div class="p-9 rounded-3xl	bg-yellow-400">
+          <strong class="text-4xl font-extrabold mb-7 text-white">{{ stat.value }}{{ stat.suffix }}</strong>
           <p class="mt-2 text-black text-sm">{{ stat.description }}</p>
         </div>
       {% endfor %}

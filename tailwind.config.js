@@ -1,14 +1,13 @@
 module.exports = {
   content: [
-    './src/**/*.html',
-    './src/**/*.md',
-    './src/**/*.njk',
-    './src/**/*.js',
+    "./src/**/*.{html,njk,js}",   // Fichiers sources pertinents
+    "./_includes/**/*.{html,njk}", // Templates Nunjucks
+    "./*.html"                    // Fichiers HTML racine
   ],
   theme: {
     extend: {
       colors: {
-        'custom-blue': '#1710C0', // Exemple de couleur personnalisée
+        'custom-blue': '#0000DF', // Exemple de couleur personnalisée
       },
       fontFamily: {
         'display': ['Halyard Display', 'sans-serif'],

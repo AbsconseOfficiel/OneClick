@@ -7,16 +7,16 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
   {% for card in section.priceCards %}
   <div 
-    class="p-9 rounded-2xl
-    {% if card.isHighlighted %}bg-custom-blue text-white{% else %}bg-white text-black{% endif %}">
+    class="p-9 py-6 rounded-2xl
+    {% if card.isHighlighted %}bg-custom-blue text-white{% else %}bg-neutral-900 text-white{% endif %}">
     
     <!-- Titre -->
-    <h3 class="font-display text-2xl text-center mb-4">
+    <h3 class="font-display text-2xl mb-4">
       {{ card.title }}
     </h3>
     
     <!-- Prix principal -->
-    <p class="text-4xl font-extrabold text-center mb-6">
+    <p class="text-4xl font-extrabold mb-6">
       {{ card.price }} M €
     </p>
 
@@ -34,37 +34,29 @@
     />
     </div>
 
-          <a href="{{ section.button.link or '#' }}" 
-         class="inline-block w-full text-center rounded-lg my-4 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
-        Réserver une démo
-      </a>
-
-      <hr>
-
     <!-- Détails -->
 <div class="space-y-4 text-sm mt-6">
-  <div class="flex justify-between items-center">
-    <span>Frais de mise en place</span>
-    <span class="font-semibold setup-cost" data-value="{{ card.setupCost }}">
-      {{ card.setupCost }} K €
-    </span>
+  <div class="flex items-center">
+    <span>Frais de mise en place : </span>
+    <span class="font-semibold setup-cost ml-2" data-value="{{ card.setupCost }}"> {{ card.setupCost }} K €</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Frais de performance</span>
-    <span class="font-semibold performance-rate" data-value="{{ card.performanceFees }}">
-      {{ card.performanceFees }}% ({{ (card.performanceFees * card.price * 1000 / 100) }} K €)
-    </span>
+  <div class="flex items-center">
+    <span>Frais de performance : </span>
+    <span class="font-semibold performance-rate ml-2" data-value="{{ card.performanceFees }}"> {{ card.performanceFees }}% ({{ (card.performanceFees * card.price * 1000 / 100) }} K €)</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Maintenance</span>
-    <span class="font-semibold maintenance-rate" data-value="{{ card.maintenance }}">
-      {{ card.maintenance }}% ({{ (card.maintenance * card.price * 1000 / 100) }} K €)
-    </span>
+  <div class="flex items-center">
+    <span>Maintenance : </span>
+    <span class="font-semibold maintenance-rate ml-2" data-value="{{ card.maintenance }}"> {{ card.maintenance }}% ({{ (card.maintenance * card.price * 1000 / 100) }} K €)</span>
   </div>
 </div>
-
+<a href="{{ section.button.link or '#' }}" 
+   class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
+  Réserver une démo
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg>
+</a>
   </div>
   {% endfor %}
 </div>
-
 </div>

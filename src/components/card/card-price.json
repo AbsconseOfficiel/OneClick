@@ -8,19 +8,23 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "setupCost": {
       "type": "string"
     },
     "performanceFees": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "maintenance": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "isHighlighted": {
       "type": "boolean"

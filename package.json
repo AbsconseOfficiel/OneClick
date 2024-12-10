@@ -11,8 +11,9 @@
     "strapi": "strapi",
     "dev": "concurrently \"strapi develop\" \"npm run 11ty\" \"npm run watch:css\"",
     "11ty": "eleventy --serve",
-    "build:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/_includes/assets/styles.css --minify",
-    "watch:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/_includes/assets/styles.css --watch"
+    "clean": "rimraf _site",
+    "build:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles.css --watch"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",

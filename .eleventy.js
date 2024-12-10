@@ -1,12 +1,16 @@
 module.exports = function(eleventyConfig) {
 
+  // Copie les fichiers CSS générés dans le répertoire de sortie (_site)
+  eleventyConfig.addPassthroughCopy("src/assets/styles.css");
+
+  // Copie uniquement les images du dossier uploads sans inclure le dossier public
+  eleventyConfig.addPassthroughCopy("public/uploads/**/*");
+
   return {
     dir: {
-      input: "src",
-      output: "_site", // Répertoire de sortie
+      input: "src",  // Dossier d'entrée
+      output: "_site"  // Dossier de sortie
     },
-    data: {
-      apiUrl: "http://localhost:1337", // Changez pour l'URL de production si nécessaire
-    },
+    dataTemplateEngine: "njk"
   };
 };

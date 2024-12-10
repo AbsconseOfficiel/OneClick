@@ -11,15 +11,13 @@
       "type": "string",
       "required": true
     },
-    "subtitle": {
-      "type": "string",
-      "required": false
-    },
     "steps": {
       "displayName": "steps",
       "type": "component",
       "repeatable": true,
-      "component": "step.steps"
+      "component": "step.steps",
+      "required": true,
+      "min": 1
     }
   }
 }

@@ -4,46 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="./assets/styles.css">
   <!-- Font et favicon -->
-    <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
   <script type="text/javascript" src="scripts.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
-<body class="bg-black text-white font-text antialiased">
-
+<body class="text-white font-text antialiased bg-neutral-950">
   <!-- Header -->
-  <header class="fixed w-full top-2 left-0 z-50 text-sm	">
-    <nav class="backdrop-blur-lg max-w-screen-xl mx-auto bg-[#121212]/65 flex justify-between items-center py-2 px-6 rounded-3xl">
-      <!-- Logo -->
-      <a href="/" class="text-xl font-bold transition">OneClick Invest</a>
+    
+    <header class="fixed w-full left-0 z-50 text-sm backdrop-blur-lg bg-[#121212]/65">
+  <nav>
+    
+      <div class="max-w-screen-2xl mx-auto flex items-center justify-between py-2 px-4 md:px-12">
+        <!-- Logo -->
+        <a href="/" class="text-xl font-bold transition">OneClick Invest</a>
 
-      <!-- Navigation links (centrés) -->
-      <div class="space-x-6 text-gray-300 flex-1 text-center">
-        <a href="/" class="hover:text-white transition">Home</a>
-        <a href="/solutions" class="hover:text-white transition">Solutions</a>
-        <a href="/products" class="hover:text-white transition">Products</a>
-        <a href="/customers" class="hover:text-white transition">Customers</a>
-        <a href="/developers" class="hover:text-white transition">Developers</a>
-        <a href="/pricing" class="hover:text-white transition">Pricing</a>
-        <a href="/blog" class="hover:text-white transition">Blog</a>
+        <!-- Navigation links (masqués sur mobile, affichés sur écran moyen et plus) -->
+        <div class="hidden md:flex justify-center space-x-6 text-gray-300 flex-1 text-center">
+          
+            
+            
+              
+            
+
+            <a 
+              href="internal" 
+              target="_self" 
+              class="hover:text-white transition">
+              internal
+            </a>
+          
+            
+            
+              
+                
+              
+            
+
+            <a 
+              href="https://external" 
+              target="_self" 
+              class="hover:text-white transition">
+              external
+            </a>
+          
+            
+            
+              
+            
+
+            <a 
+              href="#anchor" 
+              target="_blank" 
+              class="hover:text-white transition">
+              anchor
+            </a>
+          
+        </div>
+
+        <!-- Menu burger (visible uniquement sur mobile) -->
+        <button class="md:hidden text-gray-300 hover:text-white transition" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <!-- Buttons (log in et contact) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="/login" class="text-gray-300 hover:text-white transition">Log in</a>
+            <a href="/contact" class="text-black px-4 py-1 rounded-lg bg-yellow-400 hover:bg-yellow-300 transition">
+              Talk to an Expert
+            </a>
+          </div>
       </div>
 
-      <!-- Buttons on the right -->
-      <div class="space-x-4">
-        <a href="/login" class="text-gray-300 hover:text-white transition">Log in</a>
-        <a href="/contact" class="text-black px-4 py-1 rounded-lg bg-yellow-400 hover:bg-yellow-300 transition">Talk to an Expert</a>
+      <!-- Mobile menu (masqué par défaut, visible lorsque le burger est cliqué) -->
+      <div class="hidden flex-col bg-[#121212]/90 text-gray-300 md:hidden items-center" id="mobile-menu">
+      
+            
+            
+              
+            
+          <a 
+            href="internal" 
+            target="_self" 
+            class="block py-2 px-4 border-b border-gray-600 hover:bg-gray-700 hover:text-white transition">
+            internal
+          </a>
+        
+            
+            
+              
+                
+              
+            
+          <a 
+            href="https://external" 
+            target="_self" 
+            class="block py-2 px-4 border-b border-gray-600 hover:bg-gray-700 hover:text-white transition">
+            external
+          </a>
+        
+            
+            
+              
+            
+          <a 
+            href="#anchor" 
+            target="_blank" 
+            class="block py-2 px-4 border-b border-gray-600 hover:bg-gray-700 hover:text-white transition">
+            anchor
+          </a>
+        
+        <a href="/login" class="block py-2 px-4 hover:bg-gray-700 hover:text-white transition">Log in</a>
+        <a href="/contact" class="block py-2 px-4 hover:bg-gray-700 hover:text-white transition">Talk to an Expert</a>
       </div>
-    </nav>
-  </header>
+    
+  </nav>
+</header>
+
+
 
   <div id="blob-container"></div>
 
   <!-- Contenu principal -->
-  <main class="bg-black text-white">
+  <main text-white">
     
-<main class="w-full">
+<main class="w-full px-4">
   
     
       <!-- Section principale -->
@@ -55,28 +144,31 @@
         
         
           <div 
-  class="relative h-[85vh] flex items-center justify-center bg-cover bg-center rounded-b-3xl	
-         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
-         after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color" 
-  style="background-image: url('http://localhost:1337/uploads/background_c76d3e5a60.webp');"
+  class="relative h-[85vh] flex items-center justify-center bg-cover bg-center rounded-b-2xl overflow-hidden
+         before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale 
+         after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color"
+  style="background-image: url('/public/uploads/background_c76d3e5a60.webp');"
 >
+  <!-- Contenu principal -->
   <div class="relative z-10 p-10 text-center max-w-3xl">
-    <h1 class="font-display text-5xl md:text-6xl tracking-wide">
+    <h1 class="font-display text-5xl md:text-6xl tracking-wide text-white">
       Solution de Capital As A Service
     </h1>
-    <p class="text-gray-100 mt-4">
+    <p class="text-neutral-400 mt-4">
       Transformez vos clients en investisseurs fidèles
     </p>
     
     
       <a href="#" 
-         class="inline-block rounded-lg mt-8 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
+         class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
         Je démarre en 5 minutes
-      </a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg></a>
+
     
   </div>
 </div>
-
         
         
       </section>
@@ -97,50 +189,95 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       
         <div class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
-          <!-- Contenu en haut -->
           <div>
             <h3 class="font-display text-3xl mb-4">Votre levée de fonds en un clic</h3>
-            <p class="text-gray-300 mb-7 text-sm">Accélérez votre levée de fonds avec OneClick Invest. Grâce à notre solution innovante, collectez des fonds rapidement et efficacement en un clic.</p>
+            <p class="text-neutral-400 mb-7 text-sm">Accélérez votre levée de fonds avec OneClick Invest. Grâce à notre solution innovante, collectez des fonds rapidement et efficacement en un clic.</p>
           </div>
-          <!-- Bouton en bas -->
+
           
-            <a href="Test" class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-2 px-2 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
-              </svg>
-            </a>
+          <button 
+            class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min"
+            onclick="openPopup('Ob haec et huius modi multa, quae cernebantur in paucis, omnibus timeri sunt coepta. et ne tot malis dissimulatis paulatimque serpentibus acervi crescerent aerumnarum, nobilitatis decreto legati mittuntur: Praetextatus ex urbi praefecto et ex vicario Venustus et ex consulari Minervius oraturi, ne delictis supplicia sint grandiora, neve senator quisquam inusitato et inlicito more tormentis exponeretur.')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+            </svg>
+          </button>
+
+          <!-- Pop-up Template -->
+          <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+              <button 
+                class="absolute top-3 right-3 text-neutral-400 hover:text-white transition" 
+                onclick="closePopup()">
+                ✕
+              </button>
+              <div id="popup-content" class="text-neutral-200">
+                <!-- Le contenu de la pop-up sera inséré ici -->
+              </div>
+            </div>
+          </div>
           
         </div>
       
         <div class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
-          <!-- Contenu en haut -->
           <div>
             <h3 class="font-display text-3xl mb-4">Vos clients en investisseurs fidèles</h3>
-            <p class="text-gray-300 mb-7 text-sm">Transformez vos clients en investisseurs engagés grâce à notre solution, sans les délais et les coûts élevés des méthodes traditionnelles de financement.</p>
+            <p class="text-neutral-400 mb-7 text-sm">Transformez vos clients en investisseurs engagés grâce à notre solution, sans les délais et les coûts élevés des méthodes traditionnelles de financement.</p>
           </div>
-          <!-- Bouton en bas -->
+
           
-            <a href="Test" class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-2 px-2 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
-              </svg>
-            </a>
+          <button 
+            class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min"
+            onclick="openPopup('Qui cum venisset ob haec festinatis itineribus Antiochiam, praestrictis palatii ianuis, contempto Caesare, quem videri decuerat, ad praetorium cum pompa sollemni perrexit morbosque diu causatus nec regiam introiit nec processit in publicum, sed abditus multa in eius moliebatur exitium addens quaedam relationibus supervacua, quas subinde dimittebat ad principem.')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+            </svg>
+          </button>
+
+          <!-- Pop-up Template -->
+          <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+              <button 
+                class="absolute top-3 right-3 text-neutral-400 hover:text-white transition" 
+                onclick="closePopup()">
+                ✕
+              </button>
+              <div id="popup-content" class="text-neutral-200">
+                <!-- Le contenu de la pop-up sera inséré ici -->
+              </div>
+            </div>
+          </div>
           
         </div>
       
         <div class="bg-neutral-900 p-9 py-6 rounded-2xl flex flex-col justify-between">
-          <!-- Contenu en haut -->
           <div>
             <h3 class="font-display text-3xl mb-4">Marché secondaire clé en main</h3>
-            <p class="text-gray-300 mb-7 text-sm">Accédez à un marché secondaire clé en main, combinant la liquidité d&#39;une cotation en bourse avec la flexibilité et le contrôle d&#39;une entreprise privée.</p>
+            <p class="text-neutral-400 mb-7 text-sm">Accédez à un marché secondaire clé en main, combinant la liquidité d&#39;une cotation en bourse avec la flexibilité et le contrôle d&#39;une entreprise privée.</p>
           </div>
-          <!-- Bouton en bas -->
+
           
-            <a href="Test" class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-2 px-2 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
-              </svg>
-            </a>
+          <button 
+            class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-4 w-min"
+            onclick="openPopup('Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim, que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea. Rei publicae satis erat tot dierum quot C. Mario ; dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+            </svg>
+          </button>
+
+          <!-- Pop-up Template -->
+          <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+            <div class="bg-neutral-900 p-8 rounded-lg max-w-lg w-full relative">
+              <button 
+                class="absolute top-3 right-3 text-neutral-400 hover:text-white transition" 
+                onclick="closePopup()">
+                ✕
+              </button>
+              <div id="popup-content" class="text-neutral-200">
+                <!-- Le contenu de la pop-up sera inséré ici -->
+              </div>
+            </div>
+          </div>
           
         </div>
       
@@ -155,7 +292,7 @@
       <!-- Section principale -->
       <section 
         class="w-full 
-          my-12 p-10
+          my-12 py-10
           max-w-screen-2xl mx-auto">
         
         
@@ -168,20 +305,20 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
   
   <div 
-    class="p-9 rounded-2xl
-    bg-white text-black">
+    class="p-9 py-6 rounded-2xl
+    bg-neutral-900 text-white">
     
     <!-- Titre -->
-    <h3 class="font-display text-2xl text-center mb-4">
+    <h3 class="font-display text-2xl mb-4">
       Introduction en Bourse
     </h3>
     
     <!-- Prix principal -->
-    <p class="text-4xl font-extrabold text-center mb-6">
+    <p class="text-4xl font-extrabold mb-6">
       1 M €
     </p>
 
-    <p class="text-sm">Votre objectif de finacement : <span class="brut-value">NaN<span></p>
+    <p class="text-sm"> <span class="brut-value">NaN<span></p>
 
     <!-- Barre de contrôle -->
     <div class="flex items-center gap-4 my-4">
@@ -195,52 +332,45 @@
     />
     </div>
 
-          <a href="#" 
-         class="inline-block w-full text-center rounded-lg my-4 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
-        Réserver une démo
-      </a>
-
-      <hr>
-
     <!-- Détails -->
 <div class="space-y-4 text-sm mt-6">
-  <div class="flex justify-between items-center">
-    <span>Frais de mise en place</span>
-    <span class="font-semibold setup-cost" data-value="300000">
-      300000 K €
-    </span>
+  <div class="flex items-center">
+    <span>Frais de mise en place : </span>
+    <span class="font-semibold setup-cost ml-2" data-value="300000"> 300000 K €</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Frais de performance</span>
-    <span class="font-semibold performance-rate" data-value="10">
-      10% (100 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Frais de performance : </span>
+    <span class="font-semibold performance-rate ml-2" data-value="10"> 10% (100 K €)</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Maintenance</span>
-    <span class="font-semibold maintenance-rate" data-value="0">
-      0% (0 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Maintenance : </span>
+    <span class="font-semibold maintenance-rate ml-2" data-value="0"> 0% (0 K €)</span>
   </div>
 </div>
-
+<a href="#" 
+   class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
+  Réserver une démo
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg>
+</a>
   </div>
   
   <div 
-    class="p-9 rounded-2xl
+    class="p-9 py-6 rounded-2xl
     bg-custom-blue text-white">
     
     <!-- Titre -->
-    <h3 class="font-display text-2xl text-center mb-4">
+    <h3 class="font-display text-2xl mb-4">
       One Click Invest
     </h3>
     
     <!-- Prix principal -->
-    <p class="text-4xl font-extrabold text-center mb-6">
+    <p class="text-4xl font-extrabold mb-6">
       1 M €
     </p>
 
-    <p class="text-sm">Votre objectif de finacement : <span class="brut-value">NaN<span></p>
+    <p class="text-sm"> <span class="brut-value">NaN<span></p>
 
     <!-- Barre de contrôle -->
     <div class="flex items-center gap-4 my-4">
@@ -254,52 +384,45 @@
     />
     </div>
 
-          <a href="#" 
-         class="inline-block w-full text-center rounded-lg my-4 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
-        Réserver une démo
-      </a>
-
-      <hr>
-
     <!-- Détails -->
 <div class="space-y-4 text-sm mt-6">
-  <div class="flex justify-between items-center">
-    <span>Frais de mise en place</span>
-    <span class="font-semibold setup-cost" data-value="5000">
-      5000 K €
-    </span>
+  <div class="flex items-center">
+    <span>Frais de mise en place : </span>
+    <span class="font-semibold setup-cost ml-2" data-value="5000"> 5000 K €</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Frais de performance</span>
-    <span class="font-semibold performance-rate" data-value="3">
-      3% (30 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Frais de performance : </span>
+    <span class="font-semibold performance-rate ml-2" data-value="3"> 3% (30 K €)</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Maintenance</span>
-    <span class="font-semibold maintenance-rate" data-value="1">
-      1% (10 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Maintenance : </span>
+    <span class="font-semibold maintenance-rate ml-2" data-value="1"> 1% (10 K €)</span>
   </div>
 </div>
-
+<a href="#" 
+   class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
+  Réserver une démo
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg>
+</a>
   </div>
   
   <div 
-    class="p-9 rounded-2xl
-    bg-white text-black">
+    class="p-9 py-6 rounded-2xl
+    bg-neutral-900 text-white">
     
     <!-- Titre -->
-    <h3 class="font-display text-2xl text-center mb-4">
+    <h3 class="font-display text-2xl mb-4">
       Crowdfunding
     </h3>
     
     <!-- Prix principal -->
-    <p class="text-4xl font-extrabold text-center mb-6">
+    <p class="text-4xl font-extrabold mb-6">
       1 M €
     </p>
 
-    <p class="text-sm">Votre objectif de finacement : <span class="brut-value">NaN<span></p>
+    <p class="text-sm"> <span class="brut-value">NaN<span></p>
 
     <!-- Barre de contrôle -->
     <div class="flex items-center gap-4 my-4">
@@ -313,39 +436,31 @@
     />
     </div>
 
-          <a href="#" 
-         class="inline-block w-full text-center rounded-lg my-4 bg-yellow-400 text-black py-2 px-8 hover:bg-yellow-300 transition-all duration-300">
-        Réserver une démo
-      </a>
-
-      <hr>
-
     <!-- Détails -->
 <div class="space-y-4 text-sm mt-6">
-  <div class="flex justify-between items-center">
-    <span>Frais de mise en place</span>
-    <span class="font-semibold setup-cost" data-value="1500">
-      1500 K €
-    </span>
+  <div class="flex items-center">
+    <span>Frais de mise en place : </span>
+    <span class="font-semibold setup-cost ml-2" data-value="1500"> 1500 K €</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Frais de performance</span>
-    <span class="font-semibold performance-rate" data-value="10">
-      10% (100 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Frais de performance : </span>
+    <span class="font-semibold performance-rate ml-2" data-value="10"> 10% (100 K €)</span>
   </div>
-  <div class="flex justify-between items-center">
-    <span>Maintenance</span>
-    <span class="font-semibold maintenance-rate" data-value="0">
-      0% (0 K €)
-    </span>
+  <div class="flex items-center">
+    <span>Maintenance : </span>
+    <span class="font-semibold maintenance-rate ml-2" data-value="0"> 0% (0 K €)</span>
   </div>
 </div>
-
+<a href="#" 
+   class="inline-flex items-center text-center rounded-lg my-4 bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 mt-6">
+  Réserver une démo
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ml-2">
+    <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+  </svg>
+</a>
   </div>
   
 </div>
-
 </div>
         
         
@@ -354,7 +469,7 @@
       <!-- Section principale -->
       <section 
         class="w-full 
-          my-12 p-10
+          my-12 py-10
           max-w-screen-2xl mx-auto">
         
         
@@ -367,66 +482,181 @@
     <!-- Conteneur des cartes en défilement horizontal -->
     <div class="flex justify-start overflow-x-auto snap-x snap-mandatory space-x-4 w-full custom-scroll pb-9">
       
-        <div class="snap-start shadow-lg relative flex flex-row justify-between w-[32rem] flex-shrink-0">
+        <div class="snap-start relative flex flex-row justify-between w-[32rem] flex-shrink-0">
           <!-- Conteneur de l'image avec filtre appliqué -->
-          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center 
-            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
-            after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color">
-            <img src="http://localhost:1337/uploads/background_c76d3e5a60.webp" alt="Inscription et paramétrage rapide" class="w-full h-full object-cover min-h-[100%] max-h-[100%] rounded-l-2xl">
+          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center rounded-l-2xl overflow-hidden
+            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale 
+            after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color">
+            <img src="/public/uploads/background_c76d3e5a60.webp" alt="Inscription et paramétrage rapide" class="w-full h-full object-cover min-h-[100%] max-h-[100%]">
           </div>
           
           <!-- Titre et description alignés à droite -->
-          <div class="h-full bg-neutral-950 p-9 py-6 flex-1 rounded-r-2xl">
+          <div class="h-full bg-neutral-900 p-9 py-6 flex-1 rounded-r-2xl">
             <!-- Numéro d'étape -->
-            <div class="mb-7"><span class="texte-sm text-gray-300">01</span></div>
+            <div class="mb-7"><span class="text-sm text-neutral-300">01</span></div>
             <h3 class="font-display text-3xl text-white mb-4">
               Inscription et paramétrage rapide
             </h3>
-            <p class="mb-7 text-gray-300 text-sm">Inscrivez-vous sur OneClick Invest en quelques minutes. Profitez d&#39;une interface intuitive conçue pour les entreprises, sans jargon technique, pour un paramétrage rapide de votre levée de fonds.</p>
+            <p class="mb-7 text-neutral-400 text-sm">Inscrivez-vous sur OneClick Invest en quelques minutes. Profitez d&#39;une interface intuitive conçue pour les entreprises, sans jargon technique, pour un paramétrage rapide de votre levée de fonds.</p>
           </div>
         </div>
       
-        <div class="snap-start shadow-lg relative flex flex-row justify-between w-[32rem] flex-shrink-0">
+        <div class="snap-start relative flex flex-row justify-between w-[32rem] flex-shrink-0">
           <!-- Conteneur de l'image avec filtre appliqué -->
-          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center 
-            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
-            after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color">
-            <img src="http://localhost:1337/uploads/background_c76d3e5a60.webp" alt="Définissez vos objectifs de financement" class="w-full h-full object-cover min-h-[100%] max-h-[100%] rounded-l-2xl">
+          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center rounded-l-2xl overflow-hidden
+            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale 
+            after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color">
+            <img src="/public/uploads/background_c76d3e5a60.webp" alt="Définissez vos objectifs de financement" class="w-full h-full object-cover min-h-[100%] max-h-[100%]">
           </div>
           
           <!-- Titre et description alignés à droite -->
-          <div class="h-full bg-neutral-950 p-9 py-6 flex-1 rounded-r-2xl">
+          <div class="h-full bg-neutral-900 p-9 py-6 flex-1 rounded-r-2xl">
             <!-- Numéro d'étape -->
-            <div class="mb-7"><span class="texte-sm text-gray-300">02</span></div>
+            <div class="mb-7"><span class="text-sm text-neutral-300">02</span></div>
             <h3 class="font-display text-3xl text-white mb-4">
               Définissez vos objectifs de financement
             </h3>
-            <p class="mb-7 text-gray-300 text-sm">Déterminez vos objectifs de financement avec l’aide de notre équipe. Que ce soit pour la levée de fonds tokenisée, le montant cible, ou la durée, nous vous guidons pour optimiser l’engagement des investisseurs.</p>
+            <p class="mb-7 text-neutral-400 text-sm">Déterminez vos objectifs de financement avec l’aide de notre équipe. Que ce soit pour la levée de fonds tokenisée, le montant cible, ou la durée, nous vous guidons pour optimiser l’engagement des investisseurs.</p>
           </div>
         </div>
       
-        <div class="snap-start shadow-lg relative flex flex-row justify-between w-[32rem] flex-shrink-0">
+        <div class="snap-start relative flex flex-row justify-between w-[32rem] flex-shrink-0">
           <!-- Conteneur de l'image avec filtre appliqué -->
-          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center 
-            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/85 before:to-black/85 before:grayscale 
-            after:content-[''] after:absolute after:inset-0 after:bg-custom-blue after:mix-blend-color">
-            <img src="http://localhost:1337/uploads/background_c76d3e5a60.webp" alt="Intégrez le widget et lancez votre collecte" class="w-full h-full object-cover min-h-[100%] max-h-[100%] rounded-l-2xl">
+          <div class="relative flex text-2xl font-bold w-32 bg-cover bg-center rounded-l-2xl overflow-hidden
+            before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/65 before:to-black/85 before:grayscale 
+            after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color">
+            <img src="/public/uploads/background_c76d3e5a60.webp" alt="Intégrez le widget et lancez votre collecte" class="w-full h-full object-cover min-h-[100%] max-h-[100%]">
           </div>
           
           <!-- Titre et description alignés à droite -->
-          <div class="h-full bg-neutral-950 p-9 py-6 flex-1 rounded-r-2xl">
+          <div class="h-full bg-neutral-900 p-9 py-6 flex-1 rounded-r-2xl">
             <!-- Numéro d'étape -->
-            <div class="mb-7"><span class="texte-sm text-gray-300">03</span></div>
+            <div class="mb-7"><span class="text-sm text-neutral-300">03</span></div>
             <h3 class="font-display text-3xl text-white mb-4">
               Intégrez le widget et lancez votre collecte
             </h3>
-            <p class="mb-7 text-gray-300 text-sm">Intégrez facilement notre widget de collecte de fonds sur votre site ou partagez le QR code dédié. L’intégration est rapide et fluide, adaptée à vos besoins pour lancer votre collecte de fonds digitale en un clic.</p>
+            <p class="mb-7 text-neutral-400 text-sm">Intégrez facilement notre widget de collecte de fonds sur votre site ou partagez le QR code dédié. L’intégration est rapide et fluide, adaptée à vos besoins pour lancer votre collecte de fonds digitale en un clic.</p>
           </div>
         </div>
       
     </div>
   </div>
 </div>
+
+
+        
+      </section>
+    
+      <!-- Section principale -->
+      <section 
+        class="w-full 
+          bg-custom-blue p-10 rounded-3xl	
+          
+          max-w-screen-2xl mx-auto">
+        
+        
+          <div class="container mx-auto">
+  <h2 class="font-display text-4xl max-w-[35rem] mb-14">
+    Démocratiser l&#39;investissement en entreprise
+  </h2>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+    <!-- Colonne de gauche (fondateur) - 5/12 sur desktop -->
+    <div class="lg:col-span-5 bg-neutral-900 rounded-2xl flex flex-col lg:flex-row items-stretch shadow-lg overflow-hidden">
+      <!-- Image -->
+      <div class="relative w-full lg:w-1/2 h-64 lg:h-auto bg-cover bg-center 
+        before:content-[''] before:absolute before:inset-0 
+        before:bg-gradient-to-b before:from-black/65 before:to-black/85 
+        before:grayscale 
+        after:content-[''] after:absolute after:inset-0 after:bg-black after:mix-blend-color">
+        <img 
+          src="/public/uploads/1730837026112_7aecf78a0a.jpg" 
+          alt="Photo de FREDERIC DENEL" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Contenu du fondateur -->
+      <div class="p-6 md:p-9 flex flex-col justify-between flex-1">
+        <div>
+          <h3 class="font-display text-xl md:text-2xl mb-3 text-white text-center lg:text-left">
+            FREDERIC DENEL
+          </h3>
+          <p class="text-neutral-400 text-sm mb-3 text-center lg:text-left">
+            Président et Fondateur
+          </p>
+          <p class="text-neutral-400 text-sm mb-4 text-center lg:text-left">
+            
+          </p>
+        </div>
+
+        <!-- Liens sociaux -->
+        <div class="flex justify-center lg:justify-start gap-4 mt-4 text-sm">
+          
+            
+              <!-- Exemple pour Linkedin -->
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0,0,256,256" class="">
+                  <g fill="#facc15" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                      <path d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM10.954,22h-2.95v-9.492h2.95zM9.449,11.151c-0.951,0 -1.72,-0.771 -1.72,-1.72c0,-0.949 0.77,-1.719 1.72,-1.719c0.948,0 1.719,0.771 1.719,1.719c0,0.949 -0.771,1.72 -1.719,1.72zM22.004,22h-2.948v-4.616c0,-1.101 -0.02,-2.517 -1.533,-2.517c-1.535,0 -1.771,1.199 -1.771,2.437v4.696h-2.948v-9.492h2.83v1.297h0.04c0.394,-0.746 1.356,-1.533 2.791,-1.533c2.987,0 3.539,1.966 3.539,4.522z"></path>
+                    </g>
+                  </g>
+                </svg>
+                <a>LinkedIn</a>
+              </div>
+            
+            
+          
+            
+            
+              <!-- Exemple pour Facebook -->
+              <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0,0,256,256" class="">
+                  <g fill="#facc15" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                      <path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"></path>
+                    </g>
+                  </g>
+                </svg>
+                <a>Facebook</a>
+              </div>
+            
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonne de droite (cartes) - Full width sur mobile, 7/12 sur desktop -->
+    <div class="lg:col-span-7 bg-neutral-900 p-6 md:p-9 rounded-2xl flex flex-col justify-between">
+      <!-- Contenu en haut -->
+      <div>
+        <h3 class="font-display text-2xl md:text-3xl mb-4">
+          Démocratiser l&#39;investissement en entreprise
+        </h3>
+        <p class="text-neutral-400 mb-6 md:mb-7 text-sm">
+          Démocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entrepriseDémocratiser l&#39;investissement en entreprise
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 w-full">
+        <!-- Champ email -->
+        <input type="email" placeholder="Votre email"
+          class="w-full max-w-96 bg-neutral-850 text-white text-xl placeholder:text-neutral-600 py-3 px-3 rounded-md"
+        />
+        
+        <!-- Bouton -->
+        <a href="En savoir plus" class="inline-flex items-center rounded-lg bg-yellow-400 text-black py-3 px-3 hover:bg-yellow-300 transition-all duration-300 w-min">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+            <path d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
         
         
       </section>
@@ -434,8 +664,7 @@
       <!-- Section principale -->
       <section 
         class="w-full 
-          p-5
-          
+          my-12 py-10
           max-w-screen-2xl mx-auto">
         
         
@@ -443,18 +672,18 @@
   
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       
-        <div class="p-9 rounded-3xl	bg-white">
-          <strong class="text-4xl font-extrabold mb-7 text-custom-blue">83%</strong>
+        <div class="p-9 rounded-3xl	bg-yellow-400">
+          <strong class="text-4xl font-extrabold mb-7 text-white">83%</strong>
           <p class="mt-2 text-black text-sm">De fidélité supplémentaire pour un client qui investit dans votre entreprise</p>
         </div>
       
-        <div class="p-9 rounded-3xl	bg-white">
-          <strong class="text-4xl font-extrabold mb-7 text-custom-blue">50%</strong>
+        <div class="p-9 rounded-3xl	bg-yellow-400">
+          <strong class="text-4xl font-extrabold mb-7 text-white">50%</strong>
           <p class="mt-2 text-black text-sm">D&#39;augmentation de valeur pour les entreprises dont le capital est partiellement public</p>
         </div>
       
-        <div class="p-9 rounded-3xl	bg-white">
-          <strong class="text-4xl font-extrabold mb-7 text-custom-blue">100%</strong>
+        <div class="p-9 rounded-3xl	bg-yellow-400">
+          <strong class="text-4xl font-extrabold mb-7 text-white">100%</strong>
           <p class="mt-2 text-black text-sm">Basé sur la tokenisation et la blockchain pour augmenter l&#39;accessibilité et la liquidité</p>
         </div>
       
@@ -469,30 +698,31 @@
       <!-- Section principale -->
       <section 
         class="w-full 
-          my-12 p-10
+          my-12 py-10
           max-w-screen-2xl mx-auto">
         
         
-          <div class="bg-neutral-950 rounded-2xl p-9">
-  <div class="mb-7"><span class="texte-sm text-gray-300">FAQ</span></div>
+          <div class="container mx-auto">
+<div class="bg-neutral-900 rounded-2xl p-9">
+  <div class="mb-7"><span class="texte-sm text-neutral-300">FAQ</span></div>
   <h2 class="font-display text-3xl text-white mb-4 max-w-[35rem]">Questions fréquentes sur le Capital As A Service ?</h2>
   
     <div class="divide-y divide-gray-700">
       
-        <div class="py-4">
+        <div class="py-4 text-sm">
           <h3 class="text-lg font-semibold text-yellow-400 cursor-pointer">Quel type d&#39;entreprises peut utiliser ONE CLICK INVEST pour lever des fonds ?</h3>
-          <p class="text-gray-300 mt-2">OneClick Invest s&#39;adresse à toutes les entreprises, qu&#39;elles soient petites ou grandes, souhaitant impliquer leur communauté d&#39;utilisateurs dans leur croissance. Que vous cherchiez à remplacer un investisseur unique par un groupe diversifié d&#39;investisseurs ou à mobiliser vos clients, OCI est conçu pour vous. Une forte empreinte numérique est nécessaire pour maximiser l&#39;interaction avec vos clients et faciliter leur participation en tant qu&#39;actionnaires.</p>
+          <p class="text-neutral-400 mt-2">OneClick Invest s&#39;adresse à toutes les entreprises, qu&#39;elles soient petites ou grandes, souhaitant impliquer leur communauté d&#39;utilisateurs dans leur croissance. Que vous cherchiez à remplacer un investisseur unique par un groupe diversifié d&#39;investisseurs ou à mobiliser vos clients, OCI est conçu pour vous. Une forte empreinte numérique est nécessaire pour maximiser l&#39;interaction avec vos clients et faciliter leur participation en tant qu&#39;actionnaires.</p>
         </div>
       
-        <div class="py-4">
+        <div class="py-4 text-sm">
           <h3 class="text-lg font-semibold text-yellow-400 cursor-pointer">Comment ONE CLICK INVEST assure-t-il la sécurité et la conformité de la levée de fonds ?</h3>
-          <p class="text-gray-300 mt-2">OneClick Invest garantit la sécurité et la conformité de chaque levée de fonds et en respectant les régulations en vigueur. Grâce au modèle des Asset Referenced Tokens (ART) et des jetons de gouvernance DAO, vos clients peuvent investir dans des tokens numériques représentant des titres de votre entreprise. Ces titres sont placés en réserve via une structure juridique appelée SPV (Special Purpose Vehicle), et sont directement accessibles aux investisseurs via un portefeuille électronique sécurisé par des données biométriques. Ce système est conforme aux normes européennes de la régulation MiCA.</p>
+          <p class="text-neutral-400 mt-2">OneClick Invest garantit la sécurité et la conformité de chaque levée de fonds et en respectant les régulations en vigueur. Grâce au modèle des Asset Referenced Tokens (ART) et des jetons de gouvernance DAO, vos clients peuvent investir dans des tokens numériques représentant des titres de votre entreprise. Ces titres sont placés en réserve via une structure juridique appelée SPV (Special Purpose Vehicle), et sont directement accessibles aux investisseurs via un portefeuille électronique sécurisé par des données biométriques. Ce système est conforme aux normes européennes de la régulation MiCA.</p>
         </div>
       
     </div>
   
 </div>
-
+</div>
         
         
       </section>
@@ -503,8 +733,31 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-700 py-6 text-center">
-    <p class="text-gray-400 text-sm">&copy; 2024 OneClick. Tous droits réservés.</p>
+  <footer class="bg-neutral-900 border-t border-gray-700 text-gray-300 relative">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="container mx-auto flex justify-between py-6 items-center text-center relative z-10 px-10">
+        <!-- Texte à gauche -->
+        <p class="text-white text-lg md:text-2xl font-semibold drop-shadow-md">
+          Impliquez, Financez, Accélérez !
+        </p>
+
+        <!-- Liens à droite -->
+        <div class="space-x-4 text-sm">
+          <a href="/mentions-legales" class="hover:text-white transition">Mentions légales</a>
+          <a href="/politique-confidentialite" class="hover:text-white transition">Politique de confidentialité</a>
+        </div>
+      </div>
+
+      <!-- Attribution en bas -->
+      <div class="text-center pt-4 border-t border-gray-700 py-6 text-sm">
+        <p>
+          &copy; 2024 OneClick Invest. Tous droits réservés.
+        </p>
+        <p>
+          🎨 Design by <a href="/politique-confidentialite" class="font-bold">DYLAN ENJOLVIN</a>
+        </p>
+      </div>
+    </div>
   </footer>
 
 </body>

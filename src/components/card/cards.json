@@ -16,20 +16,15 @@
       "type": "text",
       "required": true
     },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "button": {
       "type": "component",
       "repeatable": false,
       "component": "cta.button"
+    },
+    "popup": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.popup-content"
     }
   }
 }

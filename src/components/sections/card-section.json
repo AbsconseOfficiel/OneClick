@@ -11,14 +11,14 @@
       "type": "string",
       "required": true
     },
-    "subtitle": {
-      "type": "string"
-    },
     "cards": {
       "displayName": "cards",
       "type": "component",
       "repeatable": true,
-      "component": "card.cards"
+      "component": "card.cards",
+      "max": 3,
+      "required": true,
+      "min": 1
     }
   }
 }

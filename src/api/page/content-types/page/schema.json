@@ -26,8 +26,11 @@
         "sections.steps-section",
         "sections.statistics-section",
         "sections.faq-section",
-        "sections.price-comparator"
-      ]
+        "sections.price-comparator",
+        "sections.founder-section"
+      ],
+      "required": true,
+      "min": 1
     }
   }
 }

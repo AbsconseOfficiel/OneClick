@@ -4,50 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="./assets/styles.css">
   <!-- Font et favicon -->
-    <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/c4d8819fda4c3fd79e36cedcc8d422bb?family=Halyard+Display" rel="stylesheet">
   <script type="text/javascript" src="scripts.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 </head>
-<body class="bg-black text-white font-text antialiased">
-
+<body class="text-white font-text antialiased bg-neutral-950">
   <!-- Header -->
-  <header class="fixed w-full top-2 left-0 z-50 text-sm	">
-    <nav class="backdrop-blur-lg max-w-screen-xl mx-auto bg-[#121212]/65 flex justify-between items-center py-2 px-6 rounded-3xl">
-      <!-- Logo -->
-      <a href="/" class="text-xl font-bold transition">OneClick Invest</a>
-
-      <!-- Navigation links (centrés) -->
-      <div class="space-x-6 text-gray-300 flex-1 text-center">
-        <a href="/" class="hover:text-white transition">Home</a>
-        <a href="/solutions" class="hover:text-white transition">Solutions</a>
-        <a href="/products" class="hover:text-white transition">Products</a>
-        <a href="/customers" class="hover:text-white transition">Customers</a>
-        <a href="/developers" class="hover:text-white transition">Developers</a>
-        <a href="/pricing" class="hover:text-white transition">Pricing</a>
-        <a href="/blog" class="hover:text-white transition">Blog</a>
-      </div>
-
-      <!-- Buttons on the right -->
-      <div class="space-x-4">
-        <a href="/login" class="text-gray-300 hover:text-white transition">Log in</a>
-        <a href="/contact" class="text-black px-4 py-1 rounded-lg bg-yellow-400 hover:bg-yellow-300 transition">Talk to an Expert</a>
-      </div>
-    </nav>
-  </header>
+    {% block header %}{% endblock %}
 
   <div id="blob-container"></div>
 
   <!-- Contenu principal -->
-  <main class="bg-black text-white">
+  <main text-white">
     {% block content %}{% endblock %}
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-700 py-6 text-center">
-    <p class="text-gray-400 text-sm">&copy; 2024 OneClick. Tous droits réservés.</p>
+  <footer class="bg-neutral-900 border-t border-gray-700 text-gray-300 relative">
+    <div class="max-w-screen-2xl mx-auto">
+      <div class="container mx-auto flex justify-between py-6 items-center text-center relative z-10 px-10">
+        <!-- Texte à gauche -->
+        <p class="text-white text-lg md:text-2xl font-semibold drop-shadow-md">
+          Impliquez, Financez, Accélérez !
+        </p>
+
+        <!-- Liens à droite -->
+        <div class="space-x-4 text-sm">
+          <a href="/mentions-legales" class="hover:text-white transition">Mentions légales</a>
+          <a href="/politique-confidentialite" class="hover:text-white transition">Politique de confidentialité</a>
+        </div>
+      </div>
+
+      <!-- Attribution en bas -->
+      <div class="text-center pt-4 border-t border-gray-700 py-6 text-sm">
+        <p>
+          &copy; 2024 OneClick Invest. Tous droits réservés.
+        </p>
+        <p>
+          🎨 Design by <a href="/politique-confidentialite" class="font-bold">DYLAN ENJOLVIN</a>
+        </p>
+      </div>
+    </div>
   </footer>
 
 </body>

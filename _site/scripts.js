@@ -1,77 +1,79 @@
-  document.addEventListener("DOMContentLoaded", () => {
-    // Sélectionne tous les sliders
-    const sliders = document.querySelectorAll(".slider-sync");
+document.addEventListener("DOMContentLoaded", () => {
+  // Fonction de formatage des nombres
+  const formatNumber = (value) => {
+    const M = 1_000_000;
+    const K = 1_000;
+    if (value >= M) return `${(value / M).toFixed(2)} M`;
+    if (value >= K) return `${(value / K).toFixed(0)} K`;
+    return `${value}`;
+  };
 
-    // Ajoute un écouteur d'événements à chaque slider
-    sliders.forEach(slider => {
-      slider.addEventListener("input", (e) => {
-        const value = e.target.value; // Récupère la valeur du slider modifié
+  // Synchroniser et calculer les valeurs
+  const synchronizeAndCalculate = (value) => {
+    document.querySelectorAll(".slider-sync").forEach((slider) => {
+      slider.value = value;
 
-        // Mets à jour tous les autres sliders
-        sliders.forEach(s => {
-          if (s !== e.target) {
-            s.value = value; // Synchronise la valeur
-          }
-        });
-      });
+      const card = slider.closest(".p-9");
+      const elements = {
+        setupCostElement: card.querySelector(".setup-cost"),
+        performanceRateElement: card.querySelector(".performance-rate"),
+        maintenanceRateElement: card.querySelector(".maintenance-rate"),
+        priceElement: card.querySelector(".text-4xl"),
+        brutValueElement: card.querySelector(".brut-value"),
+      };
+
+      const setupCost = parseFloat(elements.setupCostElement.dataset.value) || 0;
+      const performanceRate = parseFloat(elements.performanceRateElement.dataset.value) || 0;
+      const maintenanceRate = parseFloat(elements.maintenanceRateElement.dataset.value) || 0;
+      const price = parseFloat(value);
+
+      const performanceCost = (performanceRate / 100) * price;
+      const maintenanceCost = (maintenanceRate / 100) * price;
+      const totalCost = setupCost + performanceCost + maintenanceCost;
+      const remainingFunds = price - totalCost;
+
+      // Mettre à jour les valeurs affichées
+      elements.setupCostElement.textContent = `${formatNumber(setupCost)} €`;
+      elements.performanceRateElement.textContent = `${performanceRate}% (${formatNumber(performanceCost)} €)`;
+      elements.maintenanceRateElement.textContent = `${maintenanceRate}% (${formatNumber(maintenanceCost)} €)`;
+      elements.priceElement.textContent = `${formatNumber(remainingFunds)} €`;
+      elements.brutValueElement.textContent = `${formatNumber(price)} €`;
+    });
+  };
+
+  // Initialiser les sliders
+  document.querySelectorAll(".slider-sync").forEach((slider) => {
+    slider.addEventListener("input", (event) => {
+      synchronizeAndCalculate(parseInt(event.target.value, 10));
     });
   });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const formatNumber = (value) => {
-      if (value >= 1_000_000) {
-        return `${(value / 1_000_000).toFixed(2)} M`;
-      } else if (value >= 1_000) {
-        return `${(value / 1_000).toFixed(0)} K`;
-      }
-      return `${value}`;
-    };
+  // Appel initial pour synchroniser avec une valeur par défaut
+  synchronizeAndCalculate(5_000_000); // Valeur par défaut
+
+  // Ouvrir et fermer la pop-up
+  const togglePopup = (content = '') => {
+    const popup = document.getElementById("popup");
+    const popupContent = document.getElementById("popup-content");
+
+    if (content) {
+      popupContent.innerHTML = content; // Injecte le contenu dynamique
+      popup.classList.remove("hidden"); // Affiche la pop-up
+    } else {
+      popup.classList.add("hidden"); // Cache la pop-up
+    }
+  };
+
+  // Rendre les fonctions accessibles globalement pour onclick
+  window.openPopup = (content) => togglePopup(content);
+  window.closePopup = () => togglePopup();
   
-    const sliders = document.querySelectorAll(".slider-sync");
-  
-    const synchronizeAndCalculate = (value) => {
-      sliders.forEach((slider) => {
-        slider.value = value;
-  
-        // Parent card
-        const card = slider.closest(".p-9");
-  
-        // Fetch elements
-        const setupCostElement = card.querySelector(".setup-cost");
-        const performanceRateElement = card.querySelector(".performance-rate");
-        const maintenanceRateElement = card.querySelector(".maintenance-rate");
-        const priceElement = card.querySelector(".text-4xl");
-        const brutValueElement = card.querySelector(".brut-value");
-  
-        // Parse data from HTML
-        const setupCost = parseFloat(setupCostElement.dataset.value) || 0;
-        const performanceRate = parseFloat(performanceRateElement.dataset.value) || 0;
-        const maintenanceRate = parseFloat(maintenanceRateElement.dataset.value) || 0;
-        const price = parseFloat(value); // Slider value
-  
-        // Calculations
-        const performanceCost = (performanceRate / 100) * price;
-        const maintenanceCost = (maintenanceRate / 100) * price;
-        const totalCost = setupCost + performanceCost + maintenanceCost;
-        const remainingFunds = price - totalCost;
-  
-        // Update the card dynamically
-        setupCostElement.textContent = `${formatNumber(setupCost)} €`;
-        performanceRateElement.textContent = `${performanceRate}% (${formatNumber(performanceCost)} €)`;
-        maintenanceRateElement.textContent = `${maintenanceRate}% (${formatNumber(maintenanceCost)} €)`;
-        priceElement.textContent = `${formatNumber(remainingFunds)} €`;
-        brutValueElement.textContent = `${formatNumber(price)} €`;
-      });
-    };
-  
-    sliders.forEach((slider) => {
-      slider.addEventListener("input", (event) => {
-        const value = parseInt(event.target.value, 10);
-        synchronizeAndCalculate(value);
-      });
-    });
-  
-    // Initialize with default value
-    synchronizeAndCalculate(5_000_000); // Default value for initialization
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
   });
-  
+});
+
+

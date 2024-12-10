@@ -11,7 +11,10 @@
       "displayName": "stats",
       "type": "component",
       "repeatable": true,
-      "component": "stat.stats"
+      "component": "stat.stats",
+      "max": 4,
+      "required": true,
+      "min": 1
     }
   }
 }
