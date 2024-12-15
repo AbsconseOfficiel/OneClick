@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles.css --minify",
+    "build": "strapi build && tailwindcss -i ./src/assets/styles/tailwind.css -o ./src/assets/styles.css --minify",
     "deploy": "strapi deploy",
     "develop": "strapi develop",
     "start": "strapi start",
