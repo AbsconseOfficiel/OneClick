@@ -20,7 +20,7 @@
     "@strapi/plugin-cloud": "5.4.1",
     "@strapi/plugin-users-permissions": "5.4.1",
     "@strapi/strapi": "5.4.1",
-    "axios": "^1.7.7",
+    "axios": "^1.7.8",
     "better-sqlite3": "11.3.0",
     "node-fetch": "^3.3.2",
     "react": "^18.0.0",
