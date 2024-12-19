@@ -40,7 +40,7 @@ export interface ContentPopupContent extends Struct.ComponentSchema {
     icon: 'message';
   };
   attributes: {
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    content: Schema.Attribute.Text;
   };
 }
 
@@ -52,7 +52,7 @@ export interface CtaButton extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    link: Schema.Attribute.String;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -197,6 +197,7 @@ export interface SectionsFounderSection extends Struct.ComponentSchema {
 export interface SectionsHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_sections_hero_sections';
   info: {
+    description: '';
     displayName: 'Hero Section';
     icon: 'expand';
   };
@@ -206,6 +207,7 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     > &
       Schema.Attribute.Required;
     button: Schema.Attribute.Component<'cta.button', false>;
+    popup: Schema.Attribute.Component<'content.popup-content', false>;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };

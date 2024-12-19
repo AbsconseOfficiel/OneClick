@@ -15,9 +15,7 @@
     "link": {
       "type": "component",
       "repeatable": true,
-      "component": "cta.link",
-      "required": true,
-      "max": 1
+      "component": "cta.link"
     }
   }
 }

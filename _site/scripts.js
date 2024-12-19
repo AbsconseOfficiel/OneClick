@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".slider-sync").forEach((slider) => {
       slider.value = value;
 
-      const card = slider.closest(".p-9");
+      const card = slider.closest(".rounded-2xl");
       const elements = {
         setupCostElement: card.querySelector(".setup-cost"),
         performanceRateElement: card.querySelector(".performance-rate"),
@@ -76,4 +76,70 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const stats = document.querySelectorAll(".stat-value");
 
+  function animateStat(stat) {
+    const targetValue = parseInt(stat.dataset.value, 10);
+    const suffix = stat.textContent.replace(/[0-9]/g, "");
+    let currentValue = 0;
+    const maxDuration = 3000; // Durée maximale en ms
+    const durationFactor = 1 + (targetValue / 100); // Facteur pour ajuster la durée en fonction de la valeur
+
+    function updateValue() {
+      currentValue += targetValue / (durationFactor * 45);
+      if (currentValue >= targetValue) {
+        stat.textContent = targetValue + suffix;
+      } else {
+        stat.textContent = Math.ceil(currentValue) + suffix; // Rondir le nombre
+        requestAnimationFrame(updateValue);
+      }
+    }
+
+    const duration = Math.min(maxDuration, targetValue * 50); // Ajuster la durée en fonction de la valeur
+    updateValue(); // Démarrer l'animation immédiatement
+  }
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.5, // Lancer à 50% ou plus visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateStat(entry.target);
+        observer.unobserve(entry.target); // Stop observer après l’animation
+      }
+    });
+  }, observerOptions);
+
+  stats.forEach((stat) => observer.observe(stat));
+});
+
+function toggleAnswer(element) {
+  const allAnswers = document.querySelectorAll(".py-4 p");
+  
+  // Ferme toutes les réponses ouvertes sauf celle sur laquelle on clique
+  allAnswers.forEach(answer => {
+    if (answer !== element.nextElementSibling && !answer.classList.contains("hidden")) {
+      answer.style.maxHeight = "0"; // Animation de rabattement
+      setTimeout(() => {
+        answer.classList.add("hidden"); // Cache après l'animation
+      }, 500); // Temps pour permettre l'animation avant de cacher
+    }
+  });
+
+  const answer = element.nextElementSibling; // La réponse correspondante à la question cliquée
+
+  // Si la réponse est cachée, on l'ouvre, sinon on la ferme
+  if (answer.classList.contains("hidden")) {
+    answer.classList.remove("hidden");
+    answer.style.maxHeight = answer.scrollHeight + "px"; // Animation de déploiement
+  } else {
+    answer.style.maxHeight = "0"; // Animation de rabattement
+    setTimeout(() => {
+      answer.classList.add("hidden"); // Cache après l'animation
+    }, 500); // Temps pour permettre l'animation avant de cacher
+  }
+}

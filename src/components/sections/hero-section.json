@@ -2,7 +2,8 @@
   "collectionName": "components_sections_hero_sections",
   "info": {
     "displayName": "Hero Section",
-    "icon": "expand"
+    "icon": "expand",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,21 +16,26 @@
       "required": true
     },
     "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "button": {
       "displayName": "button",
       "type": "component",
       "repeatable": false,
       "component": "cta.button"
+    },
+    "popup": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content.popup-content"
     }
   }
 }

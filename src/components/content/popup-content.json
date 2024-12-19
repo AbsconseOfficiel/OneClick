@@ -9,7 +9,7 @@
   "attributes": {
     "content": {
       "type": "text",
-      "required": true
+      "required": false
     }
   }
 }
